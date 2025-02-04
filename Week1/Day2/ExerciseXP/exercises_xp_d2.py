@@ -67,21 +67,21 @@ amount = basket.count('Apples')
 basket.clear()
 print(basket)
 
-# #================ 🌟 Exercise 4: Floats =============
-# '''
+#================ 🌟 Exercise 4: Floats =============
+'''
 
-#     What is a float? What is the difference between an integer and a float?
-#     Create a list containing the following sequence of floats and integers (it should be a list with mixed types): 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 (don’t hard-code the sequence).
-#     Can you think of another way to generate a sequence of floats?
-# '''
+    What is a float? What is the difference between an integer and a float?
+    Create a list containing the following sequence of floats and integers (it should be a list with mixed types): 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 (don’t hard-code the sequence).
+    Can you think of another way to generate a sequence of floats?
+'''
 
-# #float its is a floating-point number ,integer is a whole number without a fractional part
+#float its is a floating-point number ,integer is a whole number without a fractional part
 list_of_int_float = []
 
-for i in range (3,11,2): #start,stop,step = 2
+for i in range (1,5,1): #start,stop,step = 2
     list_of_int_float.append(i) # add 3
     list_of_int_float.append(i + 0.5) #add 3.5
-print(list_of_int_float)
+print(list_of_int_float[1:]) # in the end sl
 
 
 # #================ 🌟 Exercise 5: For Loop =============
