@@ -5,10 +5,10 @@
 #     Write a function called display_message() that prints one sentence telling everyone what you are learning in this course.
 #     Call the function, and make sure the message displays correctly.
 # '''
-# def display_message():
-#      print("I'm learning how to analyze data effectively using tools like SQL, Python, and visualization techniques to derive meaningful insights")
+def display_message():
+     print("I'm learning how to analyze data effectively using tools like SQL, Python, and visualization techniques to derive meaningful insights")
 
-# display_message()
+display_message()
 
 
 # #==================== 🌟 Exercise 2: What’s your favorite book ? =================
@@ -20,10 +20,10 @@
 #     Call the function, make sure to include a book title as an argument when calling the function.
 # '''
 
-# def favorite_book(title : str):
-#      print(f'One of my favorite books is {title}')
+def favorite_book(title : str):
+     print(f'One of my favorite books is {title}')
 
-# favorite_book("Norwegian Wood")
+favorite_book("Norwegian Wood")
 
 
 
@@ -38,10 +38,10 @@
 #     Call your function.
 # '''
 
-# def describe_city(name_of_city, country = "Japan"):
-#      print(f'{name_of_city} is in {country}')
+def describe_city(name_of_city, country = "Japan"):
+     print(f'{name_of_city} is in {country}')
 
-# describe_city("Seoul","Korea")
+describe_city("Seoul","Korea")
 
 # #========= Exercise 4 : Random ==============
 # '''
@@ -50,19 +50,19 @@
 # '''
 import random
 
-# def random_func (number):
-#     number2 =random.randrange(1,100)
-#     if number == number2:
-#         print("The same numbers. Great!")
-#         return True
-#     else:
-#          print("The different")
-#          return False
+def random_func (number):
+    number2 =random.randrange(1,100)
+    if number == number2:
+        print("The same numbers. Great!")
+        return True
+    else:
+         print("The different")
+         return False
 
-# while True :
-#     number = int(input("Enter a number: "))
-#     if random_func(number): # if func return True to do break
-#          break
+while True :
+    number = int(input("Enter a number: "))
+    if random_func(number): # if func return True to do break
+         break
     
 
 #=============== 🌟 Exercise 5 : Let’s create some personalized shirts ! =================
@@ -80,21 +80,21 @@ import random
     Bonus: Call the function make_shirt() using keyword arguments.
 '''
 
-# def make_shirt(size = "large",text = "I love Python"):
-#      print(f'The size of the shirt is {size} and the text is {text}')
+def make_shirt(size = "large",text = "I love Python"):
+     print(f'The size of the shirt is {size} and the text is {text}')
 
 
 
-# make_shirt('large')
-# make_shirt('medium')
-# make_shirt("small","Hello")
+make_shirt('large')
+make_shirt('medium')
+make_shirt("small","Hello")
 
 
-# #==========Bonus =======================
-# def make_shirt(**kwargs):
-#         print(f'The size of the shirt is {kwargs["size"]} and the text is {kwargs["text"]}')
+#==========Bonus =======================
+def make_shirt(**kwargs):
+        print(f'The size of the shirt is {kwargs["size"]} and the text is {kwargs["text"]}')
 
-# make_shirt(size ="XXl",text ="Hi")
+make_shirt(size ="XXl",text ="Hi")
 
 #===============  🌟 Exercise 6 : Magicians =============
 '''
@@ -108,23 +108,23 @@ magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel']
     Call the function show_magicians() to see that the list has actually been modified.
 '''
 
-# magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel']
+magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel']
 
-# # def show_magicians(**kwargs):
-# #     for each in kwargs["magician_names"]:
-# #         print(each)
+def show_magicians(**kwargs):
+    for each in kwargs["magician_names"]:
+        print(each)
 
-# # show_magicians(magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel'])
+show_magicians(magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel'])
 
-# def make_great(**kwargs):
-#     magician_names_modif = []
-#     for each in kwargs["magician_names"]:
-#         new_each = "the Great"+each
-#         magician_names_modif.append(new_each)
-#     return print(magician_names_modif)
+def make_great(**kwargs):
+    magician_names_modif = []
+    for each in kwargs["magician_names"]:
+        new_each = "the Great"+each
+        magician_names_modif.append(new_each)
+    return print(magician_names_modif)
 
 
-# make_great(magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel'])   
+make_great(magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel'])   
 
 #===============  🌟 Exercise 7 : Temperature Advice =============
 '''
@@ -133,9 +133,9 @@ Create a function called get_random_temp().
     This function should return an integer between -10 and 40 degrees (Celsius), selected at random.
     Test your function to make sure it generates expected results.
 '''
-# def get_random_temp():
-#     number = random.randrange(-10 ,40 )
-#     return number
+def get_random_temp():
+    number = random.randrange(-10 ,40 )
+    return number
 
 
 
@@ -165,53 +165,53 @@ Change the get_random_temp() function:
     Inside the function, instead of simply generating a random number between -10 and 40, set lower and upper limits based on the season, eg. if season is ‘winter’, temperatures should only fall between -10 and 16.
 '''
 #Instead of asking for the season, ask the user for the number of the month (1 = January, 12 = December). Determine the season according to the month.
-# def months_to_season(month):
-#     if month == 12 or month == 1 or month == 2:
-#         return "winter"
-#     if month == 3 or month == 4 or month == 5:
-#         return "spring"
-#     if  month == 6 or month == 7 or month == 8:
-#         return "summer"
-#     else: 
-#         "autumn"
+def months_to_season(month):
+    if month == 12 or month == 1 or month == 2:
+        return "winter"
+    if month == 3 or month == 4 or month == 5:
+        return "spring"
+    if  month == 6 or month == 7 or month == 8:
+        return "summer"
+    else: 
+        "autumn"
 
 
-# def get_random_temp(season):
-#     if season == "winter":
-#         number = random.uniform(-10,16) #Bonus: Give the temperature as a floating-point number instead of an integer. uniform
-#     elif season == "spring":
-#         number = random.uniform(16,23)
-#     elif season == "autumn":
-#         number = random.uniform(24,32)
-#     else: 
-#         number = random.uniform(32,40)
-#     return number
+def get_random_temp(season):
+    if season == "winter":
+        number = random.uniform(-10,16) #Bonus: Give the temperature as a floating-point number instead of an integer. uniform
+    elif season == "spring":
+        number = random.uniform(16,23)
+    elif season == "autumn":
+        number = random.uniform(24,32)
+    else: 
+        number = random.uniform(32,40)
+    return number
 
-# def main():
-#     # temperature = get_random_temp()
-#     # print(f'The temperature right now is {temperature} degrees Celsius.')
-#     month = int(input("Enter a month number (1-12): "))
-#     season =  months_to_season(month)  
-#     temperature = get_random_temp(season) 
-#     # print(f'The temperature right now is {temperature} degrees Celsius.') 
+def main():
+    # temperature = get_random_temp()
+    # print(f'The temperature right now is {temperature} degrees Celsius.')
+    month = int(input("Enter a month number (1-12): "))
+    season =  months_to_season(month)  
+    temperature = get_random_temp(season) 
+    # print(f'The temperature right now is {temperature} degrees Celsius.') 
 
-#     if temperature < 0:
-#         print("Brrr, that’s freezing! Wear some extra layers today.")
-#     elif 0 <= temperature <= 16:
-#         print("Quite chilly!")
-#     elif 16 < temperature <= 23:
-#         print("Nice weather!")
-#     elif 24 <= temperature <= 32:
-#         print("Warm and pleasant!")
-#     elif 32 < temperature <= 40:
-#         print("It’s hot!")
-#     else:
-#         print("Temperature is above 40°C!")
+    if temperature < 0:
+        print("Brrr, that’s freezing! Wear some extra layers today.")
+    elif 0 <= temperature <= 16:
+        print("Quite chilly!")
+    elif 16 < temperature <= 23:
+        print("Nice weather!")
+    elif 24 <= temperature <= 32:
+        print("Warm and pleasant!")
+    elif 32 < temperature <= 40:
+        print("It’s hot!")
+    else:
+        print("Temperature is above 40°C!")
 
-#     print(f'The temperature right now is {temperature} degrees Celsius.') 
+    print(f'The temperature right now is {temperature} degrees Celsius.') 
 
 
-# main()
+main()
 
 # get_random_temp("Autumn")
 # seasons = ["Spring", "Summer", "Autumn", "Winter"]
@@ -268,24 +268,28 @@ def answers_from_user (data):
     wrong_answers = []
     for element in data:
         print(element["question"])
-        answer = input("Your answer: ")
+        answer = input("Your answer: ").lower()
         if element["answer"] == answer:
-            count_answers += 1
-            
+            count_answers += 1    
         else:
-            wrong_answers.append(answer)
+            wrong_answers.append({"question":element["question"],"user_answer": answer,"correct_answer": element["answer"]}) # put in wrong_answer Q, right q and wrong q 
     return count_answers, wrong_answers
 
-def info_for_user(right_answers ,wrong_answers):
-    print(f"The number of correct answers is {right_answers} and the list of incorrect answer is {len(wrong_answers)}")
-    if wrong_answers:
-        for question in wrong_answers:
-            print(question)
-     
+def info_for_user(count_answers ,wrong_answers):
+    # print(f"The number of correct answers is {count_answers} and the list of incorrect answer is {len(wrong_answers)}")
+    # if wrong_answers:
+    #     for question in wrong_answers:
+    #         print(question)
+     if wrong_answers:
+        for element in wrong_answers:
+            print(f"Q:{element['question']}")
+            print(f"Your answer: {element['user_answer']}")
+            print(f"The right question: {element['correct_answer']}")
 
 
 def main():
-    right_answers ,wrong_answers = answers_from_user(data) #we have to say result from func 
-    info_for_user(right_answers ,wrong_answers)
+    count_answers ,wrong_answers = answers_from_user(data) #we have to say result from func 
+    info_for_user(count_answers ,wrong_answers)
 
 main()
+
