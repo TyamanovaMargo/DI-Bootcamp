@@ -28,6 +28,6 @@ for column in range(len(matrix[0])):
                 new_matrix.append(" ") #change symbol to space
                 # print(new_matrix)
 
-# delete space
+
 coding_message = ''.join(new_matrix).strip()
 print(coding_message)
