@@ -5,12 +5,12 @@
     Use List Comprehension
 '''
 
-word_from_user = input("Enter a comma-separated sequence of words: ") # also can split here
+# word_from_user = input("Enter a comma-separated sequence of words: ") # also can split here
 
 
-result = [ word for word in word_from_user.split(",")] # Split the input 'items' into a list of words
+# result = [ word for word in word_from_user.split(",")] # Split the input 'items' into a list of words
 
-print(",".join(sorted(list(result))))
+# print(",".join(sorted(list(result))))
 
 
 # =========== Challenge 2 : Longest Word ==========
@@ -22,9 +22,13 @@ Characters such as apostrophe, comma, period count as part of the word (e.g. Oâ€
 
 sent = input("Enter a sentence: ")
 def longest_word (sentence):
+    longest_word = ''
     for word in sentence:
-        print(word,len(word))
+        if len(word) > len(longest_word):
+            longest_word = word
+    print (longest_word)
 
 
 
-longest_word (sent.split(" ")) #Split into individual words
+
+longest_word (sent.split(' ')) #Split into individual words
