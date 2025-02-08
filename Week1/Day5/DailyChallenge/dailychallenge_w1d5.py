@@ -5,12 +5,12 @@
     Use List Comprehension
 '''
 
-# word_from_user = input("Enter a comma-separated sequence of words: ") # also can split here
+word_from_user = input("Enter a comma-separated sequence of words: ") # also can split here
 
 
-# result = [ word for word in word_from_user.split(",")] # Split the input 'items' into a list of words
+result = [ word for word in word_from_user.split(",")] # Split the input 'items' into a list of words
 
-# print(",".join(sorted(list(result))))
+print(",".join(sorted(list(result))))
 
 
 # =========== Challenge 2 : Longest Word ==========
