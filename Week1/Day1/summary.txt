@@ -1,0 +1,4 @@
+integer is a real whole number  number can be pos,neg and zero
+float its is a floating-point number
+boolean its a true or false and they are numbers
+strings it chain(sequence) of characters in quotes -representing textual data

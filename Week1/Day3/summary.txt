@@ -1,0 +1,14 @@
+how to :
+- create (syntax) = {key : value}
+- access data = dict_name [key]
+- modify an entry ( a key value pair) = dict_name[key] = new_value
+- add new entry = dict_name[new_key] = new_value
+- del foe deleting
+- access all keys and value = dict_name.items ()
+- method to add one or multiole key value - upfate()
+-access keys  .keys() and value .value()
+
+zip()
+
+Continue - jump to the next itteration
+and Pass

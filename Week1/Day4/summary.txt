@@ -1,0 +1,15 @@
+-reusability
+-better structure to the code
+-increase your code efficiency
+
+
+types arg:
+-positional
+-keyword
+-default
+
+how to access to the output
+-return
+- returning multiple values
+
+globa; and local scope

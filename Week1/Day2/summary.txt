@@ -1,4 +1,4 @@
 List is an ordered, mutable, allows dublicates []
-Set is unordered, immutable, with unique elements, not allows dduplicates {}
+Set is unordered, immutable, with unique elements, not allows duplicates {}
 Tuple is ordered, immutable, its cannot be changed ()
-Loop a structure that repets actionsmultiple times
+Loop a structure that repets actions multiple times
