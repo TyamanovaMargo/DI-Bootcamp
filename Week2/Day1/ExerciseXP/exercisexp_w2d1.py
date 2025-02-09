@@ -115,11 +115,11 @@ class Zoo():
             if first_letter not in dict_animals: # if first char not in dict
                 dict_animals[first_letter] = [] # create empty dicr, if we create empty list in dict
             dict_animals[first_letter].append(animal)
-        print(dict_animals)
+        return print(dict_animals)
             
     def get_groups (self): #prints the animal/animals inside each group.
                 animal_groups = self.sort_animals()
-                print(animal_groups)
+                return print(animal_groups)
 
 
 # def ramat_gan_safari(): #call all the methods.
@@ -128,9 +128,11 @@ ramat_gan_safari = Zoo("Ramat Gan Safari")
 ramat_gan_safari.add_animal("Bear")
 ramat_gan_safari.add_animal("Lion")
 ramat_gan_safari.add_animal("Babu")
-ramat_gan_safari.get_animals()
+# ramat_gan_safari.get_animals()
 ramat_gan_safari.sell_animal("Lion")
 ramat_gan_safari.sort_animals()
-ramat_gan_safari.get_animals()
+# ramat_gan_safari.get_animals()
+
+ramat_gan_safari.get_groups()
 
     
