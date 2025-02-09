@@ -6,56 +6,56 @@ class Cat:
         self.age = cat_age
         
 # Instantiate three Cat objects using the code provided above.       
-# cat1 = Cat("Lusya",18)
-# cat2 = Cat("Bonya",6)
-# cat3 = Cat("Nora",13)
+cat1 = Cat("Lusya",18)
+cat2 = Cat("Bonya",6)
+cat3 = Cat("Nora",13)
 
 # # a function that finds the oldest cat and returns the cat.
-# def oldest_age_cat ( * args):
-#     oldest_cat = args[0] # cat1 = Cat("Lusya",18)
+def oldest_age_cat ( * args):
+    oldest_cat = args[0] # cat1 = Cat("Lusya",18)
     
-#     for cat in args[1:]:  #args from position 1
-#         if cat.age >= oldest_cat.age:
-#             oldest_cat = cat #each cat our object belongs to Cat
+    for cat in args[1:]:  #args from position 1
+        if cat.age >= oldest_cat.age:
+            oldest_cat = cat #each cat our object belongs to Cat
 
-#     # print(f'The oldest cat is {cat.name}, and is {cat.age} years old.')
-#     return print(f'The oldest cat is {oldest_cat.name}, and is {oldest_cat.age} years old.')
+    # print(f'The oldest cat is {cat.name}, and is {cat.age} years old.')
+    return print(f'The oldest cat is {oldest_cat.name}, and is {oldest_cat.age} years old.')
 
    
-# #call func
-# oldest_cat = oldest_age_cat ( cat1,cat2,cat3)
+#call func
+oldest_cat = oldest_age_cat ( cat1,cat2,cat3)
 
 #======================= 🌟 Exercise 2 : Dogs ======================
 
-#Create a class called Dog.
-# class Dog : 
-#     def __init__(self, name, height):  #in this class, create an __init__ method that takes two parameters : name and height. This function instantiates two attributes, which values are the parameters.
-#         self.name = name
-#         self.height = height
-#         print(f'Name is {name} and height is {height}')
+# Create a class called Dog.
+class Dog : 
+    def __init__(self, name, height):  #in this class, create an __init__ method that takes two parameters : name and height. This function instantiates two attributes, which values are the parameters.
+        self.name = name
+        self.height = height
+        print(f'Name is {name} and height is {height}')
     
-#     def bark(self):
-#         print(f"{self.name} goes woof!")
-#     def jump(self):
-#         x = self.height *2
-#         print(f"{self.name} jumps {x} cm hight!")
+    def bark(self):
+        print(f"{self.name} goes woof!")
+    def jump(self):
+        x = self.height *2
+        print(f"{self.name} jumps {x} cm hight!")
 
-# # my_dog = Dog("Buba",90)
-# # my_dog.bark()
-# # my_dog.jump()
+# my_dog = Dog("Buba",90)
+# my_dog.bark()
+# my_dog.jump()
 
-# davids_dog = Dog("Rex",50)
-# davids_dog.jump()
-# davids_dog.bark()
+davids_dog = Dog("Rex",50)
+davids_dog.jump()
+davids_dog.bark()
 
-# sarahs_dog = Dog("Teacup",20)
-# sarahs_dog.jump()
-# sarahs_dog.bark()
+sarahs_dog = Dog("Teacup",20)
+sarahs_dog.jump()
+sarahs_dog.bark()
                  
-# biggest_dog = davids_dog
-# if sarahs_dog.height > biggest_dog.height:
-#     biggest_dog = sarahs_dog
-# print(f"{biggest_dog.name} of the bigger dog")
+biggest_dog = davids_dog
+if sarahs_dog.height > biggest_dog.height:
+    biggest_dog = sarahs_dog
+print(f"{biggest_dog.name} of the bigger dog")
 
 #============== 🌟 Exercise 3 : Who’s the song producer? ===========
 '''
@@ -64,16 +64,16 @@ Its __init__() method should have two arguments: self and lyrics (a list).
 Inside your class create a method called sing_me_a_song that prints each element of lyrics on its own line.
 
 '''
-# class Song():
-#     def __init__(self,lyrics = []):
-#         self.lyrics = lyrics
+class Song():
+    def __init__(self,lyrics = []):
+        self.lyrics = lyrics
 
-#     def sing_me_a_song(self):
-#         for each_element in self.lyrics:
-#             print(each_element)
+    def sing_me_a_song(self):
+        for each_element in self.lyrics:
+            print(each_element)
 
-# stairway= Song(["There’s a lady who's sure","all that glitters is gold", "and she’s buying a stairway to heaven"])
-# stairway.sing_me_a_song()
+stairway= Song(["There’s a lady who's sure","all that glitters is gold", "and she’s buying a stairway to heaven"])
+stairway.sing_me_a_song()
 
 #============== Exercise 4 : Afternoon at the Zoo ===============
 '''
@@ -107,28 +107,30 @@ class Zoo():
         # print(self.list_animals)
 
     def sort_animals(self): #sorts the animals alphabetically and groups them together based on their first letter. 
-        sorted_animals = sorted(self.list_animals)
+        sorted_animals = sorted(self.list_animals) #here we sorted our list
         # print(f"Sorted list of animals {sorted_animals}")
-        dict_animals ={ }
-        for animal in sorted_animals:
-            print(animal[0]) #take first char
-    
-    
-    
+        dict_animals ={ } # initialized empty dict
+        for animal in sorted_animals: 
+            first_letter = animal[0].upper() # animal[0] -get first char,upper()  converts a string to uppercase (capital letters).
+            if first_letter not in dict_animals: # if first char not in dict
+                dict_animals[first_letter] = [] # create empty dicr, if we create empty list in dict
+            dict_animals[first_letter].append(animal)
+        print(dict_animals)
+            
     def get_groups (self): #prints the animal/animals inside each group.
-        pass
+                animal_groups = self.sort_animals()
+                print(animal_groups)
 
 
 # def ramat_gan_safari(): #call all the methods.
 ramat_gan_safari = Zoo("Ramat Gan Safari")
-ramat_gan_safari.add_animal("Tiger")
+
 ramat_gan_safari.add_animal("Bear")
 ramat_gan_safari.add_animal("Lion")
-# ramat_gan_safari.add_animal("Elephant")
-# ramat_gan_safari.add_animal("Cheetos")
-# ramat_gan_safari.add_animal("Emu")
-# ramat_gan_safari.get_animals()
-# ramat_gan_safari.sell_animal("Lion")
+ramat_gan_safari.add_animal("Babu")
+ramat_gan_safari.get_animals()
+ramat_gan_safari.sell_animal("Lion")
 ramat_gan_safari.sort_animals()
+ramat_gan_safari.get_animals()
 
     
