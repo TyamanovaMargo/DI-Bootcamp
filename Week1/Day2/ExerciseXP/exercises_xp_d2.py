@@ -224,8 +224,15 @@ while "Pastrami sandwich" in sandwich_orders:
 print(sandwich_orders)
 finished_sandwiches = [] #put here sand 
 
+
 while sandwich_orders:
-    sandwich = sandwich_orders.pop() # remove last one 
-    finished_sandwiches.append(sandwich) # removed element add to list finished_sandwiches
-for sandwiches in finished_sandwiches:
-    print(f"I made your {sandwiches}")
+    sandwich = sandwich_orders.pop(0)
+    finished_sandwiches.append(sandwich)
+    print(f"I made your {sandwich}")
+
+
+# while sandwich_orders:
+#     sandwich = sandwich_orders.pop() # remove last one 
+#     finished_sandwiches.append(sandwich) # removed element add to list finished_sandwiches
+# for sandwiches in finished_sandwiches:
+#     print(f"I made your {sandwiches}")
