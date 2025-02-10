@@ -13,24 +13,33 @@ class Farm :
                 self.animals[animal] += count # to existing count
         else: 
              self.animals[animal] = count
-        print(f"{self.animals}")      
+        # print(f"{self.animals}")      
                  
 
-    def get_info():
-        pass  
-
+ 
     
+    def  get_animal_types (self):
+        sorted_animals = sorted(self.animals)
+        return sorted_animals
 
+    def get_short_info(self,):
+        animals  =  self.get_animal_types()
+        print(animals)
+        if len(animals) == 1:
+            output  = animals[0]
+        elif len(animals) == 2:
+            output = " and ".join(animals)
+        else:
+            output = ",".join(animals[:-1])
+        
+        print(f"McDonald’s farm has {output}")
 
-
-
-
-
-
-
+       
 macdonald = Farm("McDonald")
 macdonald.add_animal('cow',5)
 macdonald.add_animal('sheep')
 macdonald.add_animal('sheep')
+# macdonald.get_animal_types()
 # macdonald.add_animal('goat', 12)
 # print(macdonald.get_info())
+macdonald.get_short_info()
