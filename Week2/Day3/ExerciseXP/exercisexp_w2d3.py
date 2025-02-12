@@ -65,9 +65,9 @@ c2 = Currency('dollar', 10)
 c3 = Currency('shekel', 1)
 c4 = Currency('shekel', 10)
 
-# print(str(c1))
-# int(c1)
-# print (c1 + 5)
+print(str(c1))
+int(c1)
+print (c1 + 5)
 
 
 #================ 🌟 Exercise 2: Import ======================
@@ -99,32 +99,32 @@ import module_name as mn
 
 #============ 🌟 Exercise 3: String module =================
 
-# import random
+import random
 
-# import string
+import string
 
-# lenght = 5
-# random_string = (" ".join(random.choices(string.ascii_letters,k = lenght))) # string.ascii_letters includes both uppercase and lowercase alphabets.
-# print(random_string)
+lenght = 5
+random_string = (" ".join(random.choices(string.ascii_letters,k = lenght))) # string.ascii_letters includes both uppercase and lowercase alphabets.
+print(random_string)
 
 
 #============ 🌟 Exercise 4 : Current Date =================
 
 from datetime import datetime
 
-# x = datetime.datetime.now()
-# print(x) 
+x = datetime.datetime.now()
+print(x) 
 
 #=============== Exercise 5 : Amount of time left until January 1st===============
 
-# def left_until_January():
-#     specific_year = 2026
-#     first_january = datetime(specific_year, 1, 1)
-#     current_date = datetime.now()
-#     return print(current_date - first_january )
+def left_until_January():
+    specific_year = 2026
+    first_january = datetime(specific_year, 1, 1)
+    current_date = datetime.now()
+    return print(current_date - first_january )
 
 
-# left_until_January()
+left_until_January()
 
 # from datetime import datetime
 
@@ -146,26 +146,26 @@ from datetime import datetime
 
 
 #========= Exercise 6 : Birthday and minutes ==========
-from datetime import datetime
+# from datetime import datetime
 
-# def how_much_you_live():
-#     current_date = datetime.now() 
-#     print(current_date)
-#     input_from_user = input("Enter your b-day (YYYY-MM-DD): ")
-#     date_of_birthday = datetime.strptime(input_from_user,"%Y-%m-%d") #converts the string into a datetime object
-#     print(date_of_birthday)
-#     time_left = current_date - date_of_birthday 
+def how_much_you_live():
+    current_date = datetime.now() 
+    print(current_date)
+    input_from_user = input("Enter your b-day (YYYY-MM-DD): ")
+    date_of_birthday = datetime.strptime(input_from_user,"%Y-%m-%d") #converts the string into a datetime object
+    print(date_of_birthday)
+    time_left = current_date - date_of_birthday 
     
-    # days = time_left.days
-    # print(days) # 322
-    # hours, remainder = divmod(time_left.seconds, 3600) # gives the total number of remaining seconds
-    # minutes, seconds = divmod(remainder, 60)
+    days = time_left.days
+    print(days) # 322
+    hours, remainder = divmod(time_left.seconds, 3600) # gives the total number of remaining seconds
+    minutes, seconds = divmod(remainder, 60)
     
-#     total_minutes = time_left.total_seconds() // 60  
+    total_minutes = time_left.total_seconds() // 60  
 
-#     print(f"You have lived approximately {int(total_minutes):,} minutes.")
+    print(f"You have lived approximately {int(total_minutes):,} minutes.")
 
-# how_much_you_live()
+how_much_you_live()
 
 #=================== Exercise 7 : Faker Module ===============
 
