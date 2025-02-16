@@ -15,9 +15,6 @@ class Farm :
              self.animals[animal] = count
         # print(f"{self.animals}")      
                  
-
- 
-    
     def  get_animal_types (self):
         sorted_animals = sorted(self.animals)
         return sorted_animals
@@ -35,7 +32,7 @@ class Farm :
         print(f"McDonald’s farm has {output}")
 
        
-macdonald = Farm("McDonald")
+macdonald =Farm("McDonald")
 macdonald.add_animal('cow',5)
 macdonald.add_animal('sheep')
 macdonald.add_animal('sheep')

@@ -19,7 +19,7 @@ board = [
 def display_board():
     
     print("*******************")  
-    for i in range(3):
+    for i in range(3): #(0,1,2)
         print(f"* {board[i][0]}   | {board[i][1]}   | {board[i][2]}   *")
         if i < 2:
             print("* --- | --- |---  *")  # Separator between rows

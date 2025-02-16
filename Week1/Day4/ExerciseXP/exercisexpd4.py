@@ -116,12 +116,11 @@ def show_magicians(**kwargs):
 
 show_magicians(magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel'])
 
-def make_great(**kwargs):
-    magician_names_modif = []
-    for each in kwargs["magician_names"]:
-        new_each = "the Great"+each
-        magician_names_modif.append(new_each)
-    return print(magician_names_modif)
+def make_great(magician_names):
+    # magician_names_modif = []
+    for i,name in enumerate(magician_names):
+        magician_names[i] = f'{name} the Great'
+    return print(magician_names)
 
 
 make_great(magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel'])   
