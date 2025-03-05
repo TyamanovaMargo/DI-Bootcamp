@@ -1,33 +1,44 @@
 #=== Instructions ==========
 
-matrix = [
-    ['7', 'i', 'i'],
-    ['T', 's', 'x'],
-    ['h', '%', '?'],
-    ['i', '', '#'],
-    ['s', 'M', ''],
-    ['$', 'a', ''],
-    ['#', 't', '%'],
-    ['^', 'r', '!']
-]
+matrix_string = """
+7ii
+Tsx
+h%?
+i #
+sM 
+$a 
+#t%
+^r!
+"""
+print(matrix_string)
 
-                                  
-matrix_grid = [''.join(row) for row in matrix]
-print(matrix_grid)
+# Creat a 2D list
+matrix = []
 
-new_matrix = []
-for column in range(len(matrix[0])): 
-    for row in matrix_grid:  
-        if column < len(row): 
-            char = row[column]
-            # print(char)
-            if char.isalpha():  # check alphabet char or not
-                new_matrix.append(char)
-                # print(new_matrix)
-            elif new_matrix and new_matrix[-1] != " ":
-                new_matrix.append(" ") #change symbol to space
-                # print(new_matrix)
+lines = matrix_string.strip().split("\n")
+print(lines)
 
-# delete space
-coding_message = ''.join(new_matrix).strip()
-print(coding_message)
+for line in lines:
+    matrix.append(list(line))
+print(matrix)
+
+num_cols = len(matrix[0])
+print(num_cols)
+
+# Decrypt the matrix: for loop for checking characters
+# Replace every group of symbols between two alpha characters
+decoded_message = ""
+for col in range(num_cols):
+    for row in range(len(matrix)):  
+        char = matrix[row][col]
+        if char.isalpha():
+            decoded_message += char
+        else:
+            if len(decoded_message) != 0 and decoded_message[-1] != ' ':
+                decoded_message += " "
+
+print("Decoded Message: ", decoded_message)
+
+cleaned_message = " ".join(decoded_message.split())
+# cleaned_message = decoded_message.strip()
+print("Decoded Message:", cleaned_message)
