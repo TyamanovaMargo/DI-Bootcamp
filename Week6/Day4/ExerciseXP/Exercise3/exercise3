@@ -1,0 +1,51 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import pprint  # To tidy up
+from bs4 import BeautifulSoup
+
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')  # Run Chrome in headless mode
+options.add_argument("--no-sandbox")  # Bypass OS security model
+options.add_argument("--disable-dev-shm-usage")  # Overcome limited resource problems
+driver = webdriver.Chrome(options=options)
+
+
+url = "https://www.rottentomatoes.com/browse/movies_at_home/critics:certified_fresh"
+driver.get(url)
+print("Page Title:", driver.title)
+
+
+
+soup = BeautifulSoup(driver.page_source, 'html.parser')
+movies = soup.select('div[data-qa="discovery-media-list"] > div.flex-container')
+
+movie_data = []
+for movie in movies:
+    # name of the film
+    title_element = movie.select_one('span[data-qa="discovery-media-list-item-title"]')
+    title = title_element.text.strip() if title_element else ''
+
+    # start relise
+    # start_date_element = movie.select_one('a[data-qa^="discovery-media-list-item-start-date"]')
+    # startDate = start_date_element['href'].strip() if start_date_element and start_date_element.has_attr('href') else ''
+    start_date_element = movie.select_one('a[data-qa^="discovery-media-list-item-start-date"], span[data-qa^="discovery-media-list-item-start-date"]')
+    startDate = start_date_element.text.strip() if start_date_element else ''
+
+
+    # raiting
+    rating_element = movie.select_one('[slot="audienceScore"]')
+    rating = rating_element.text.strip() if rating_element else ''
+
+    # Добавляем в список
+    movie_data.append({
+        "title": title,
+        "startDate": startDate,
+        "rating": rating
+    })
+
+# Вывод результата
+for movie in movie_data:
+    print(movie)
