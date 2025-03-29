@@ -1,0 +1,6 @@
+# Ignore the terrorism dataset
+globalterrorismdb_0718dist.csv
+
+# Ignore other large files
+*.log
+*.tmp
