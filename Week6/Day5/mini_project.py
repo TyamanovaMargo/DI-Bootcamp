@@ -94,7 +94,7 @@ for plan, details in merged_plans.items():
 df = pd.DataFrame(final_data)
 
 # Save data to a CSV file
-df.to_csv("inmotion_hosting_plans.csv", index=False)
+df.to_csv("plans.csv", index=False)
 
 # Show a confirmation message
 print("The data was saved in 'plans.csv'.")
