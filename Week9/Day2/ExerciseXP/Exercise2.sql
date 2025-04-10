@@ -63,13 +63,80 @@ FROM film
 ORDER BY rental_rate ASC
 LIMIT 10;
 
----Not satisfied with the results. Write a query which will find the next 10 cheapest movies.
----Bonus: Try to not use LIMIT.
+--Not satisfied with the results. Write a query which will find the next 10 cheapest movies.
 
----Write a query which will join the data in the customer table and the payment table. You want to get the first name and last name from the curstomer table, as well as the amount and the date of every payment made by a customer, ordered by their id (from 1 to…).
+WITH RankedFilms AS (
+    SELECT 
+        film_id, 
+        title, 
+        rental_rate,
+        ROW_NUMBER() OVER (ORDER BY rental_rate ASC, film_id) AS row_num
+    FROM film
+)-- Common Table Expression
+SELECT film_id, title, rental_rate
+FROM RankedFilms
+WHERE row_num BETWEEN 11 AND 20;
 
----You need to check your inventory. Write a query to get all the movies which are not in inventory.
+--ROW_NUMBER() is a window function that gives a unique number to each row
+--OVER (ORDER BY rental_rate ASC, film_id) — specifies the order in which to number::First by rental_rate
+--If there are several films with the same price, we use film_id as an additional sorting to avoid chaos
 
----Write a query to find which city is in which country.
 
----Bonus You want to be able to see how your sellers have been doing? Write a query to get the customer’s id, names (first and last), the amount and the date of payment ordered by the id of the staff member who sold them the dvd.
+--Write a query which will join the data in the customer table and the payment table.
+--You want to get the first name and last name from the curstomer table, as well as the amount and the date of every payment made by a customer, ordered by their id (from 1 to…).
+
+SELECT 
+    customer.customer_id,
+    customer.first_name, 
+    customer.last_name, 
+    payment.amount, 
+    payment.payment_date
+FROM customer
+JOIN payment 
+    ON payment.customer_id = customer.customer_id
+ORDER BY customer.customer_id ASC, payment.payment_date;
+
+--You need to check your inventory. Write a query to get all the movies which are not in inventory.
+SELECT film.film_id, film.title
+FROM film
+LEFT JOIN inventory 
+    ON film.film_id = inventory.film_id
+WHERE inventory.film_id IS NULL;
+
+--Write a query to find which city is in which country.
+
+SELECT city.city, country.country
+FROM city
+JOIN country
+	ON city.country_id = country.country_id;
+
+--Write a query to get the customer’s id, names (first and last), the amount and the date of payment ordered by the id of the staff member who sold them the dvd.
+SELECT 
+    customer.customer_id,
+    customer.first_name, 
+    customer.last_name, 
+    payment.amount,
+	payment.staff_id,
+    payment.payment_date,
+	staff.first_name,
+	staff.last_name
+FROM customer
+JOIN payment 
+    ON payment.customer_id = customer.customer_id
+JOIN staff 
+    ON staff.staff_id = payment.staff_id
+ORDER BY payment.staff_id ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
