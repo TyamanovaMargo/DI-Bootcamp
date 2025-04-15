@@ -1,16 +1,6 @@
 --Exercise 1:
-CREATE DATABASE movies
-    WITH
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    LC_COLLATE = 'French_France.1252'
-    LC_CTYPE = 'French_France.1252'
-    LOCALE_PROVIDER = 'libc'
-    TABLESPACE = pg_default
-    CONNECTION LIMIT = -1
-    IS_TEMPLATE = False;
 
---Task1
+--Task1.Rank Movies by Popularity within Each Genre
 SELECT 
     g.genre_name,
     m.title,
@@ -22,7 +12,7 @@ JOIN
 JOIN 
     genre g ON mg.genre_id = g.genre_id;
 
---Task2
+--Task2.Identify the Top 3 Movies by Revenue within Each Production Company
 SELECT 
     pc.company_name,
     m.title,
@@ -37,7 +27,7 @@ JOIN
 WHERE 
     m.revenue IS NOT NULL;
 
---Task3
+--Task3.Calculate the Running Total of Movie Budgets for Each Genre
 SELECT 
     g.genre_name,
     m.title,
@@ -58,7 +48,7 @@ WHERE
 ORDER BY 
     g.genre_name, m.budget;
 
---Task4
+--Task4.Identify the Most Recent Movie for Each Genre
 SELECT 
     g.genre_name,
     m.title,
@@ -77,7 +67,7 @@ WHERE
     m.release_date IS NOT NULL;
 
 --Exercise2
---Task1
+--Task1.Rank Actors by Their Appearance in Movies
 SELECT 
     actor_stats.person_name,
     DENSE_RANK() OVER (ORDER BY actor_stats.total_movies DESC) AS rank
@@ -94,7 +84,7 @@ FROM (
 ) AS actor_stats
 ORDER BY rank;
 
---Task2
+--Task2. Identify the Top Director by Average Movie Rating
 WITH director_avg_rating AS (
     SELECT p.person_name AS director_name, 
            AVG(m.vote_average) AS avg_rating
@@ -109,7 +99,7 @@ FROM director_avg_rating
 ORDER BY avg_rating DESC
 LIMIT 1;
 
---Task3
+--Task3.Calculate the Cumulative Revenue of Movies Acted by Each Actor
 SELECT 
     p.person_name AS actor_name,
     m.title AS movie_title,
@@ -124,7 +114,7 @@ JOIN person p ON mc.person_id = p.person_id
 JOIN movie m ON mc.movie_id = m.movie_id
 ORDER BY actor_name, cumulative_revenue DESC;
 
---Task4
+--Task4. Identify the Director Whose Movies Have the Highest Total Budget
 WITH director_budgets AS (
     SELECT 
         p.person_name AS director_name,
